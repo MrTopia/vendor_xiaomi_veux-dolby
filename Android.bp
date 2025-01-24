@@ -7,12 +7,236 @@ soong_namespace {
 	],
 }
 
+cc_prebuilt_library_shared {
+	name: "libdapparamstorage",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/libdapparamstorage.so"],
+			shared_libs: [ ],
+		},
+		: {
+			srcs: ["proprietary/vendor/lib64/libdapparamstorage.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdeccfg",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/libdeccfg.so"],
+			shared_libs: [ ],
+		},
+		: {
+			srcs: ["proprietary/vendor/lib64/libdeccfg.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libhwdap",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/soundfx/libhwdap.so"],
+			shared_libs: [ ],
+		},
+		: {
+			srcs: ["proprietary/vendor/lib64/soundfx/libhwdap.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "both",
+	relative_install_path: "soundfx",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libswgamedap",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/soundfx/libswgamedap.so"],
+			shared_libs: [ ],
+		},
+		: {
+			srcs: ["proprietary/vendor/lib64/soundfx/libswgamedap.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "both",
+	relative_install_path: "soundfx",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libswvqe",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/soundfx/libswvqe.so"],
+			shared_libs: [ ],
+		},
+		: {
+			srcs: ["proprietary/vendor/lib64/soundfx/libswvqe.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "both",
+	relative_install_path: "soundfx",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.dolby.hardware.dms@2.0",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/vendor.dolby.hardware.dms@2.0.so"],
+			shared_libs: [ ],
+		},
+		: {
+			srcs: ["proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "audio.primary.holi",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib/hw/audio.primary.holi.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "32",
+	relative_install_path: "hw",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdlbdsservice",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib64/libdlbdsservice.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libstagefright_soft_ddpdec",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib64/libstagefright_soft_ddpdec.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libstagefrightdolby",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib64/libstagefrightdolby.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.dolby.hardware.dms@2.0-impl",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		: {
+			srcs: ["proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so"],
+			shared_libs: [ ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
 prebuilt_etc_xml {
 	name: "manifest_vendor.dolby.hardware.dms.xml",
 	owner: "xiaomi",
 	src: "proprietary/vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+sh_binary {
+	name: "vendor.dolby.hardware.dms@2.0-service",
+	owner: "xiaomi",
+	src: "proprietary/vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service",
+	filename: "vendor.dolby.hardware.dms@2.0-service",
+	sub_dir: "hw",
 	soc_specific: true,
 }
 
